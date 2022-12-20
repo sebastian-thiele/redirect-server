@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: redirect-server
+
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    path: /_docs/api
+  swagger-ui:
+    path: /_docs/swagger
+  show-actuator: true

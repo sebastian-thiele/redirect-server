@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-slug-table
+      author: sebastian-thiele
+      changes:
+        - createTable:
+            tableName: slug
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    unique: true
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: redirect_http_header
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: redirect_type
+                  type: varchar(9)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: redirect_fallback_url
+                  type: clob
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-slug-table-increment
+      author: sebastian-thiele
+      changes:
+        - addAutoIncrement:
+            tableName: slug
+            columnName: id
+            columnDataType: bigint
+            startWith: 1
+            incrementBy: 1
+  - changeSet:
+      id: create-slug-target-table
+      author: sebastian-thiele
+      changes:
+        - createTable:
+            tableName: slug_target
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    unique: true
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: slug_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: redirect_regex
+                  type: clob
+                  constraints:
+                    nullable: false
+              - column:
+                  name: redirect_url
+                  type: clob
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-slug-target-increment
+      author: sebastian-thiele
+      changes:
+        - addAutoIncrement:
+            tableName: slug_target
+            columnName: id
+            columnDataType: bigint
+            startWith: 1
+            incrementBy: 1
+  - changeSet:
+      id: create-slug-target-table-indexes
+      author: sebastian-thiele
+      changes:
+        - createIndex:
+            tableName: slug_target
+            indexName: idx_slug_target_slug_id
+            columns:
+              - column:
+                  name: slug_id
+                  type: bigint

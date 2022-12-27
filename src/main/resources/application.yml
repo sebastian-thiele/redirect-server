@@ -1,10 +1,21 @@
 spring:
   application:
     name: redirect-server
-
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:redirect-server
+    username: sa
+    password: 's3cr3t!'
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/changelog.yml
+  h2:
+    console:
+      enabled: true
 server:
   port: 8080
-
 springdoc:
   api-docs:
     path: /_docs/api

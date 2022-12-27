@@ -22,3 +22,12 @@ springdoc:
   swagger-ui:
     path: /_docs/swagger
   show-actuator: true
+logging:
+  group:
+    app: "de.sebastianthiele.redirect"
+    sql: "org.springframework.jdbc.core,org.hibernate,org.jooq.tools.LoggerListener"
+  level:
+    root: "info"
+    app: "trace"
+    web: "debug"
+    sql: "trace"

@@ -14,8 +14,8 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: redirect_http_header
-                  type: varchar(100)
+                  name: key
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:

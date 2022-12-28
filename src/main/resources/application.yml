@@ -5,7 +5,7 @@ spring:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:redirect-server
     username: sa
-    password: 's3cr3t!'
+    password: ''
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
@@ -31,3 +31,5 @@ logging:
     app: "trace"
     web: "debug"
     sql: "trace"
+redirect-server:
+  http-header-user-agent: User-Agent

@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedirectApplication {
+public class RedirectServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedirectApplication.class, args);
+		SpringApplication.run(RedirectServerApplication.class, args);
 	}
-
 }

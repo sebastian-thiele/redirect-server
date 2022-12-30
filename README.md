@@ -148,9 +148,9 @@ Errors are indicated by HTTP status codes. The error response has the following 
 | NOT_FOUND | Entity not found. |
 | SERVICE_ERROR | Error within the service. |
 
-### Getting redirect
+### Getting all redirects
 
-To get a redirect, send a `GET` request to `/api/redirect/<key>` and provide the key of the redirect in the path. If the redirect could not be found, you will get a `404`.
+To get a list of all redirects, send a `GET` request to `/api/redirects`.
 
 ### Adding redirects
 
